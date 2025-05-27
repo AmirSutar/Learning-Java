@@ -1,27 +1,18 @@
-import java.util.HashSet;
-
 public class Common {
+    public static void main(String[] args) {
+        String input = "ddr344Hh 989";
+        StringBuilder a = new StringBuilder();
+        StringBuilder b = new StringBuilder();
 
-	public static void main(String[] args) {
+        for (char c : input.toCharArray()) {
+            if (Character.isLetter(c)) {
+                a.append(c);
+            } else if (Character.isDigit(c)) {
+                b.append(c);
+            }
+        }
 
-		String[] Arr1 = { "This", "Is", "It" };
-		String[] Arr2 = { "This", "Is", "Its" };
-
-		HashSet<String> mylist = new HashSet<String>();
-
-		for (int i = 0; i < Arr1.length; i++) {
-			for (int j = 0; j < Arr2.length; j++) {
-
-				if (Arr1[i] == Arr2[j]) {
-					mylist.add(Arr1[i]);
-				}
-
-			}
-
-		}
-
-		System.out.println(mylist);
-
-	}
-
+        System.out.println("a -> " + a); // ddrHh
+        System.out.println("b -> " + b); // 344989
+    }
 }
